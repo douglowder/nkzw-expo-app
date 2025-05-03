@@ -3,7 +3,13 @@ import getLocale, {
   getTranslationsObject,
   setClientLocale,
 } from './i18n/getLocale.tsx';
-import ja_JP from './translations/ja_JP.json' with { type: 'json' };
+
+let ja_JP: any;
+try {
+  ja_JP = require('./i18n/translations/ja_JP.json');
+} catch (e) {
+  console.log('Failed to load ja_JP translations', e);
+}
 
 setupFbtee({
   hooks: {
@@ -16,8 +22,8 @@ setupFbtee({
 });
 
 setClientLocale('ja_JP', async (locale) => {
-  if (locale === 'ja_JP') {
-    return ja_JP.ja_JP;
+  if (locale === 'ja_JP' && ja_JP?.ja_JP) {
+    return ja_JP?.ja_JP;
   }
   return {};
 });
