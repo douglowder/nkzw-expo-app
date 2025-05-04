@@ -42,7 +42,6 @@
     "classnames": "^2.5.1",
     "expo": "~53.0.7",
     "expo-constants": "~17.1.5",
-    "expo-dev-client": "~5.1.7",
     "expo-font": "^13.3.0",
     "expo-linear-gradient": "^14.1.4",
     "expo-linking": "~7.1.4",
@@ -54,7 +53,7 @@
     "nativewind": "^4.1.23",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-native": "~0.79.2",
+    "react-native": "npm:react-native-tvos@0.79.2-0",
     "react-native-edge-to-edge": "^1.6.0",
     "react-native-gesture-handler": "~2.24.0",
     "react-native-reanimated": "^3.17.5",
@@ -80,7 +79,8 @@
     "tailwindcss": "^3.4.0",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2",
-    "vitest-react-native": "^0.1.5"
+    "vitest-react-native": "^0.1.5",
+    "@react-native-tvos/config-tv": "0.1.1"
   },
   "pnpm": {
     "updateConfig": {
@@ -93,5 +93,12 @@
     },
     "ignorePatchFailures": false
   },
-  "packageManager": "yarn@1.22.22"
+  "packageManager": "yarn@1.22.22",
+  "expo": {
+    "install": {
+      "exclude": [
+        "react-native"
+      ]
+    }
+  }
 }
