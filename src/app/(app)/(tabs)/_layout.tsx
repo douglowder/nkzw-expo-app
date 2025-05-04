@@ -25,6 +25,7 @@ export default function TabLayout() {
           backgroundColor: 'transparent',
         },
         tabBarActiveTintColor: colors.purple,
+        tabBarInactiveTintColor: colors.black,
       }}
     >
       <Tabs.Screen
@@ -41,7 +42,9 @@ export default function TabLayout() {
                     opacity: pressed ? 0.5 : 1,
                   }}
                 >
-                  <Text>{getLocale().split('_')[0]}</Text>
+                  <Text className="text-[3vh]">
+                    {getLocale().split('_')[0]}
+                  </Text>
                 </View>
               )}
             </Pressable>
@@ -50,7 +53,7 @@ export default function TabLayout() {
             <AntDesign
               color={focused ? colors.purple : colors.black}
               name="ie"
-              size={24}
+              size={48}
             />
           ),
           title: String(fbs('Home', 'Home tab title')),
@@ -63,7 +66,7 @@ export default function TabLayout() {
             <AntDesign
               color={focused ? colors.purple : colors.black}
               name="printer"
-              size={24}
+              size={48}
             />
           ),
           title: String(fbs('Two', 'Two tab title')),
